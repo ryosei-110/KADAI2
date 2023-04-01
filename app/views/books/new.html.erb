@@ -1,0 +1,30 @@
+<h1>books</h1>
+<tables>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>入門git</td>
+      <td>gitについて基本操作から内部情報まで解説してくれます</td>
+      <td>
+        <a class="show" href="/books/show">Show</a>
+      </td>
+    </tr>
+  </tbody>
+</tables>
+
+<h2>New Book</h2>
+<%= form_with model: @list, url:'/lists', methid: :post do |f| %>
+  <h4>title</h4>
+  <%= f.text_field :title %>
+
+  <h4>body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create book' %>
+<% end %>
